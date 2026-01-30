@@ -25,7 +25,9 @@ header {
 }
 
 .logo {
-    height: 60px;
+    width: 95px;        /* Bigger but balanced */
+    height: auto;
+    margin-left: 20px;  /* Adds breathing space */
 }
 
 nav ul {
@@ -146,5 +148,11 @@ button:hover {
     header {
         flex-direction: column;
         gap: 15px;
+    }
+}
+@media (max-width: 768px) {
+    .logo {
+        width: 80px;
+        margin-left: 10px;
     }
 }
