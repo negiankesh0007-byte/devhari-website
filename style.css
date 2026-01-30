@@ -13,15 +13,12 @@ h1, h2, h3 {
 
 /* Navbar */
 header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 15px 40px;
-    background: white;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     position: sticky;
     top: 0;
-    z-index: 100;
+    width: 100%;
+    background: white;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 .logo {
@@ -156,3 +153,4 @@ button:hover {
         margin-left: 10px;
     }
 }
+
