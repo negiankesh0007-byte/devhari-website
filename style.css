@@ -1,261 +1,150 @@
-/* General Page Style */
+/* Global settings */
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: #f6f6f6;
+    background: #fafafa;
+    color: #333;
 }
 
-/* Header */
+h1, h2, h3 {
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Navbar */
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 15px 40px;
-    background-color: white;
-    border-bottom: 1px solid #e0e0e0;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .logo {
-    height: 80px;
+    height: 60px;
 }
 
-header nav ul {
-    list-style: none;
+nav ul {
     display: flex;
-    gap: 35px;
-    flex-wrap: wrap;
+    list-style: none;
+    gap: 30px;
 }
 
 nav a {
     text-decoration: none;
     font-size: 16px;
-    color: #1B8C3B;
+    color: #1b8c3b;
     font-weight: 500;
 }
 
-nav a:hover,
-nav a.active {
-    color: #0d5e25;
-    font-weight: 600;
+nav a:hover {
+    color: #15702f;
 }
 
-/* Hero Banner */
+/* Hero banner */
 .hero {
-    text-align: center;
-    background: linear-gradient(to right, #0d842d, #157f41);
+    background: linear-gradient(to right, #1b8c3b, #15702f);
     color: white;
-    padding: 60px 20px;
-    border-radius: 15px;
-    margin: 40px auto;
-    width: 90%;
-}
-
-/* Focus Areas */
-.focus-cards {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-    padding: 30px;
-}
-
-.card {
-    background: white;
-    width: 250px;
-    padding: 20px;
-    border-radius: 15px;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-/* Activities Section */
-.activities {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-    padding: 30px;
-}
-
-.activity img {
-    width: 100%;
-    height: 170px;
-    object-fit: cover;
+    padding: 70px 20px;
     border-radius: 12px;
+    margin: 40px auto;
+    width: 85%;
 }
 
-.activity {
-    width: 280px;
+/* Cards layout */
+.focus-cards, .activities-list, .team-grid {
+    display: grid;
+    gap: 25px;
+    margin: 40px auto;
+    width: 85%;
+}
+
+.focus-cards {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.activities-list {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.card, .activity, .team-card {
     background: white;
     padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     text-align: center;
-}
-
-/* CTA Button */
-.cta-button {
-    background-color: #f0a51a;
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.cta-button:hover {
-    background-color: #d68c00;
 }
 
 /* Footer */
 footer {
-    text-align: center;
-    background: #0d742e;
+    background: #1b8c3b;
     color: white;
-    padding: 30px;
-    margin-top: 40px;
-}
-
-footer a {
-    color: white;
-    margin: 0 8px;
-}
-
-/* Shared Page Header (for About, Team, Contact) */
-.page-header {
     text-align: center;
-    padding: 50px 20px;
-    background: #ffffff;
+    padding: 20px 10px;
+    margin-top: 50px;
 }
 
-.content-section {
-    max-width: 900px;
-    margin: auto;
-    background: white;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+/* Form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
 }
 
-/* Team List */
-.team-list li {
-    font-size: 20px;
-    margin: 10px 0;
-}
-
-/* Contact Box */
-.contact-box {
-    max-width: 500px;
-    margin: auto;
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-}
-
-.contact-box input,
-.contact-box textarea {
-    width: 100%;
+input, textarea {
     padding: 12px;
-    margin-bottom: 12px;
-    border-radius: 8px;
-    border: 1px solid #0d742e;
-}
-/* ============================
-   MOBILE RESPONSIVE DESIGN
-   ============================ */
-
-/* Tablets (max 1024px) */
-@media (max-width: 1024px) {
-    header {
-        padding: 15px 20px;
-    }
-
-    .hero {
-        margin: 30px auto;
-        padding: 40px 20px;
-    }
-
-    .focus-cards,
-    .activities {
-        gap: 20px;
-    }
+    border: 2px solid #1b8c3b;
+    border-radius: 6px;
 }
 
-/* Mobile (max 768px) */
+button {
+    padding: 12px;
+    border: none;
+    background: #1b8c3b;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #15702f;
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+.zoom-in {
+    opacity: 0;
+    transform: scale(0.9);
+    animation: zoomIn 0.8s forwards;
+}
+
+@keyframes zoomIn {
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Responsive */
 @media (max-width: 768px) {
-
     header {
         flex-direction: column;
-        text-align: center;
-    }
-
-    header .logo {
-        margin-bottom: 10px;
-    }
-
-    header nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-        padding: 0;
-    }
-
-    .hero h1 {
-        font-size: 22px;
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-
-    .focus-cards {
-        grid-template-columns: 1fr;
-    }
-
-    .activities {
-        grid-template-columns: 1fr;
-    }
-
-    form {
-        width: 95%;
-        margin: 0 auto;
-    }
-}
-
-/* Small Mobile (max 480px) */
-@media (max-width: 480px) {
-
-    header nav ul {
         gap: 15px;
-        font-size: 14px;
-    }
-
-    .hero {
-        padding: 30px 15px;
-        margin: 20px 5px;
-    }
-
-    .hero h1 {
-        font-size: 20px;
-    }
-
-    .hero p {
-        font-size: 14px;
-    }
-
-    .focus-cards .card {
-        padding: 20px;
-    }
-
-    .activities .activity {
-        padding-bottom: 20px;
     }
 }
-
-
-.contact-box button {
-    width: 100%;
-}
-
