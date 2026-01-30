@@ -12,15 +12,38 @@ h1, h2, h3 {
 }
 
 /* Navbar */
+/* HEADER FIXED HEIGHT LESS */
 header {
     position: sticky;
     top: 0;
-    width: 100%;
     background: white;
-    z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 20px;
+    z-index: 999;
+    border-bottom: 1px solid #eee;
 }
 
+/* SMALLER LOGO */
+header .logo {
+    height: 50px;   /* Earlier 100px था इसलिए बहुत बड़ा लग रहा था */
+    width: auto;
+}
+
+/* NAVBAR LINKS */
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #1B8C3B;
+    font-size: 16px;
+    font-weight: 500;
+}
 .logo {
     width: 95px;        /* Bigger but balanced */
     height: auto;
@@ -153,4 +176,5 @@ button:hover {
         margin-left: 10px;
     }
 }
+
 
